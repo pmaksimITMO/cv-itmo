@@ -1,0 +1,122 @@
+# Единый gitignore для CV-репозитория.
+# В git: .ipynb, .py, фото, видео, README/requirements/LICENSE.
+# Остальное — локальный мусор, окружения, датасеты, веса, логи.
+
+# --- macOS / Windows ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Linux / editors ---
+*~
+*.swp
+*.swo
+*.sublime-*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Виртуальные окружения
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+profile_default/
+.jupyter/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.code-workspace
+
+# --- Секреты и локальный конфиг ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Кэши, тесты, линтеры ---
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+htmlcov/
+.hypothesis/
+
+# --- ML / CV: не исходники, а артефакты обучения ---
+runs/
+outputs/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+logs/
+*.pt
+*.pth
+*.ckpt
+*.weights
+*.onnx
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.safetensors
+.roboflow/
+.huggingface/
+
+# --- Датасеты и тяжёлые выгрузки ---
+# data/*, а не data/ — иначе git не увидит вложенные исключения
+data/*
+!data/my_photos/
+!data/my_photos/**
+datasets/
+downloads/
+**/labels/
+**/images/train/
+**/images/val/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# photos/ и videos/ рядом с data/ — не игнорируются (см. правила выше)
+
+# --- Прочий мусор ---
+*.log
+*.tmp
+*.temp
+.tmp/
+temp/
+tmp/
+__MACOSX/
